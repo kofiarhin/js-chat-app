@@ -2,7 +2,9 @@ const socket = io()
 const $form = document.querySelector("#form-wrapper form")
 const $message = $form.querySelector("input")
 const $messages = document.querySelector("#messages")
+const $userList = document.querySelector(".users-list");
 
+console.log($userList)
 // get username from url 
 const query = new URLSearchParams(location.search);
 const username = query.get("username")
@@ -16,8 +18,7 @@ if (!username || !room) {
 
 socket.emit("join", { username, room })
 
-socket.on("new-user", (username, users) => {
-    loadUsers(users)
+socket.on("new-user", ({ username, users }) => {
 
     const element = document.createElement("p")
     element.innerText = `${username} just joined!`
@@ -26,13 +27,35 @@ socket.on("new-user", (username, users) => {
 })
 
 
+socket.on("roomData", data => {
+
+    let markup = "";
+
+    if (data && data.length > 0) {
+
+        $userList.innerHTML = "";
+
+        data.forEach(item => {
+
+            const li = document.createElement("li")
+            li.textContent = item.username;
+
+            $userList.insertAdjacentElement("beforeend", li)
+        });
+
+
+    }
+
+
+})
+
 socket.on("user-left", ({ username, users }) => {
 
     const element = document.createElement("p")
     element.innerText = `${username} just left`;
     $messages.insertAdjacentElement("beforeend", element);
 
-    loadUsers(users)
+
 })
 
 

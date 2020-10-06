@@ -39,12 +39,17 @@ const getUser = (id) => {
     return null
 }
 
-const removeUser = id => {
+const removeUser = (username, room) => {
 
-    const index = users.findIndex(user => user.id === id);
-    const user = users.splice(index, 1)[0];
+    const users = getUsersInRoom(room);
 
-    return user;
+    if (users) {
+
+        const index = users.findIndex(user => user.username === username);
+        const user = users.splice(index, 1)[0];
+
+        return user;
+    }
 }
 
 

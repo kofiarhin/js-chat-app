@@ -33,26 +33,20 @@ io.on("connection", socket => {
             return console.log(error)
         }
 
-        const users = getUsersInRoom("public")
-
-        console.log(users)
+        // get list of users
+        const users = getUsersInRoom(user.room)
         // send message to room
         socket.broadcast.to(room).emit("new-user", { username, users })
 
-
+        io.to(user.room).emit("roomData", users)
 
     })
 
 
     socket.on("disconnect", () => {
 
-        const user = removeUser(socket.id);
 
-        if (user) {
-
-            io.to(user.room).emit("user-left", user.username)
-        }
-
+        // todo work on disconnection
 
     })
 
