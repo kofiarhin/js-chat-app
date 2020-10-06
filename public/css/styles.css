@@ -33,27 +33,46 @@ ul {
 ul li {
     color: white;
     margin-bottom: .8rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
 }
 
 /* typography */
 
-.title {
-    font-size: 1.4rem;
+.title, .room-title {
     text-align: center;
     margin-bottom: 1rem;
+    text-transform: capitalize
 }
+
+.title {
+    font-size: 2rem;
+}
+
+.room-title {
+    font-size: 1.4rem;
+}
+
+
+#join .title {
+
+font-size: 3rem;
+}
+
 
 #join {
 
-    padding: 2rem;
+    margin-top: 100px;
 }
 
 #join .form-wrapper {
     width: 540px;
     max-width: 90%;
-    margin: 0 auto;
+    margin: 0px auto;
 
 }
+
+
 
 #join .form-wrapper input {
     
@@ -62,7 +81,8 @@ ul li {
     padding: 0.8rem;
     text-indent: 20px;
     margin-bottom: 1rem;
-    border: 1px solid rgba(black, 0.8)
+    border: 1px solid rgba(black, 0.8); 
+    font-size: 1.3rem;
     
 }
 
@@ -70,7 +90,7 @@ ul li {
     display: block;
     width: 100%;
     padding: 1rem 0rem;
-    background: black;
+    background: #6730ec;
     color: white;
 }
 
@@ -84,9 +104,10 @@ ul li {
 
 #users-wrapper {
 
-    width: 200px;
-    background: blue;
-    padding: 1rem;
+    width: 400px;
+    background: #6730ec;
+    padding: 3rem 1rem;
+    overflow-y: scroll;
 }
 
 #messages-wrapper {
@@ -98,9 +119,9 @@ ul li {
 }
 
 #messages-wrapper #messages {
-    background: purple;
+    background: #7984ee;
     flex: 1;
-    padding:  1rem;
+    padding:  2rem 3rem;
     overflow-y: scroll
 }
 
@@ -112,16 +133,20 @@ ul li {
 
     padding: 0.8rem;
     flex: 1;
+    font-size: 1.4rem;
 }
 
 #messages-wrapper #form-wrapper form button {
     padding: 0.8rem 3rem;
-    background: black;
+    background: #6730ec;
     color: white;
+    font-size: 1.2rem;
 }
 
-.message span {
+.message  {
     color: white;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 
 

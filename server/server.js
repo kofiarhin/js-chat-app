@@ -22,29 +22,44 @@ io.on("connection", socket => {
     io.emit("message", "new user connected");
 
 
-    socket.on("join", ({ username, room }) => {
+    socket.on("join", ({ username, room }, callback) => {
 
-        socket.join(room);
 
-        const { error, user } = addUser(socket.id, username, room);
 
-        if (error) {
+        try {
 
-            return console.log(error)
+            const { user } = addUser(socket.id, username, room);
+            socket.join(room);
+
+            // get list of users
+            const users = getUsersInRoom(user.room)
+            // send message to room
+            socket.broadcast.to(room).emit("new-user", { username, users })
+
+            io.to(user.room).emit("roomData", users)
+        } catch (error) {
+
+            socket.emit("error", error)
         }
 
-        // get list of users
-        const users = getUsersInRoom(user.room)
-        // send message to room
-        socket.broadcast.to(room).emit("new-user", { username, users })
 
-        io.to(user.room).emit("roomData", users)
+
+
+
+
+
 
     })
 
 
     socket.on("disconnect", () => {
 
+        const user = removeUser(socket.id);
+        if (user) {
+            io.emit("roomData", getUsersInRoom(user.room));
+
+            io.to(user.room).emit('user-left', user.username)
+        }
 
         // todo work on disconnection
 

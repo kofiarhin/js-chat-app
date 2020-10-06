@@ -3,8 +3,9 @@ const $form = document.querySelector("#form-wrapper form")
 const $message = $form.querySelector("input")
 const $messages = document.querySelector("#messages")
 const $userList = document.querySelector(".users-list");
+const $roomTitle = document.querySelector(".room-title")
 
-console.log($userList)
+
 // get username from url 
 const query = new URLSearchParams(location.search);
 const username = query.get("username")
@@ -15,13 +16,16 @@ if (!username || !room) {
     location.href = "/"
 }
 
+$roomTitle.textContent = room;
+
 
 socket.emit("join", { username, room })
 
 socket.on("new-user", ({ username, users }) => {
 
     const element = document.createElement("p")
-    element.innerText = `${username} just joined!`
+    element.innerText = `${username} just joined!`;
+    element.classList.add("message")
 
     $messages.insertAdjacentElement("beforeend", element)
 })
@@ -49,9 +53,10 @@ socket.on("roomData", data => {
 
 })
 
-socket.on("user-left", ({ username, users }) => {
+socket.on("user-left", username => {
 
     const element = document.createElement("p")
+    element.classList.add("message")
     element.innerText = `${username} just left`;
     $messages.insertAdjacentElement("beforeend", element);
 
@@ -68,11 +73,16 @@ socket.on("message", data => {
 
 
 
+socket.on("error", data => {
+
+    console.log("user already in use")
+})
 
 // separate actual message from welcom message
 socket.on("sendMessage", ({ username, message }) => {
 
-    const element = document.createElement("p")
+    const element = document.createElement("p");
+    element.classList.add("message")
 
     // work on the styling later
     element.innerHTML = `${username}: ${message}`;

@@ -2,11 +2,15 @@ const users = []
 
 const addUser = (id, username, room) => {
 
+    username = username.trim().toLowerCase()
+    room = room.trim().toLowerCase()
+
     const existingUser = users.find(user => user.username === username && user.room === room);
 
     if (existingUser) {
 
-        return { error: "user already added" }
+        throw new Error("username already in use!")
+        // return { error: "user in use" }
     } else {
 
         const newUser = { id, username, room }
@@ -39,13 +43,12 @@ const getUser = (id) => {
     return null
 }
 
-const removeUser = (username, room) => {
+const removeUser = (id) => {
 
-    const users = getUsersInRoom(room);
+    const index = users.findIndex(user => user.id === id);
 
-    if (users) {
+    if (index > -1) {
 
-        const index = users.findIndex(user => user.username === username);
         const user = users.splice(index, 1)[0];
 
         return user;
