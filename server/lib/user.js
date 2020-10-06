@@ -9,15 +9,13 @@ const addUser = (id, username, room) => {
 
     if (existingUser) {
 
-        throw new Error("username already in use!")
-        // return { error: "user in use" }
-    } else {
-
-        const newUser = { id, username, room }
-        users.push(newUser)
-
-        return { user: newUser }
+        return { error: "username already in use" }
     }
+
+    const user = { id, username, room }
+    users.push(user)
+
+    return { user }
 
 
 }

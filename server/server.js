@@ -4,7 +4,7 @@ const app = express()
 const socketio = require("socket.io")
 const path = require("path")
 
-const { addUser, getUser, removeUser, getUsersInRoom } = require("./lib/helper")
+const { addUser, getUser, removeUser, getUsersInRoom } = require("./lib/user")
 
 // setup public path
 
@@ -24,30 +24,19 @@ io.on("connection", socket => {
 
     socket.on("join", ({ username, room }, callback) => {
 
+        const { error, user } = addUser(socket.id, username, room);
 
-
-        try {
-
-            const { user } = addUser(socket.id, username, room);
-            socket.join(room);
-
-            // get list of users
-            const users = getUsersInRoom(user.room)
-            // send message to room
-            socket.broadcast.to(room).emit("new-user", { username, users })
-
-            io.to(user.room).emit("roomData", users)
-        } catch (error) {
-
-            socket.emit("error", error)
+        if (error) {
+            return callback(error)
         }
+        socket.join(room);
 
+        // get list of users
+        const users = getUsersInRoom(user.room)
+        // send message to room
+        socket.broadcast.to(room).emit("new-user", { username, users })
 
-
-
-
-
-
+        io.to(user.room).emit("roomData", users)
 
     })
 

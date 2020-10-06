@@ -19,7 +19,11 @@ if (!username || !room) {
 $roomTitle.textContent = room;
 
 
-socket.emit("join", { username, room })
+socket.emit("join", { username, room }, (error) => {
+
+    alert(error)
+    window.location.href = "/"
+})
 
 socket.on("new-user", ({ username, users }) => {
 
