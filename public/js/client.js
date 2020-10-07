@@ -4,7 +4,8 @@ const $message = $form.querySelector("input")
 const $messages = document.querySelector("#messages")
 const $userList = document.querySelector(".users-list");
 const $roomTitle = document.querySelector(".room-title")
-
+const $showBtn = document.querySelector(".show-users")
+const $usersWrapper = document.querySelector("#users-wrapper")
 
 // get username from url 
 const query = new URLSearchParams(location.search);
@@ -96,6 +97,11 @@ socket.on("sendMessage", ({ username, message }) => {
 
 })
 
+
+$showBtn.addEventListener("click", () => {
+
+    $usersWrapper.classList.toggle("active")
+});
 
 $form.addEventListener("submit", e => {
 

@@ -104,10 +104,11 @@ font-size: 3rem;
 
 #users-wrapper {
 
-    width: 400px;
+    width: 300px;
     background: #6730ec;
     padding: 3rem 1rem;
     overflow-y: scroll;
+    transition: all ease-in-out 300ms;
 }
 
 #messages-wrapper {
@@ -156,11 +157,38 @@ font-size: 3rem;
 }
 
 
+
+.show-users {
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    display: none;
+    color: white;
+    font-size: 1.8rem;
+}
+
+
+
 @media(max-width: 640px) {
 
-    #users-wrapper {
-        display: none;
-    }
+#users-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-400px); 
+    width: 200px;
+}
+
+#users-wrapper.active {
+
+    transform: translateX(0px)
+}
+
+
+
 #messages-wrapper #form-wrapper form input, #messages-wrapper #form-wrapper form button {
 
     font-size: 1rem;
@@ -174,6 +202,13 @@ font-size: 3rem;
 
 #messages-wrapper #form-wrapper form input {
     padding: 0.8rem 0rem;
+    text-indent: 20px;
+}
+
+.show-users {
+
+    display: block;
 }
 
 }
+
