@@ -109,6 +109,8 @@ font-size: 3rem;
     padding: 3rem 1rem;
     overflow-y: scroll;
     transition: all ease-in-out 300ms;
+     scrollbar-color: rebeccapurple green;
+  scrollbar-width: 3px;
 }
 
 #messages-wrapper {
