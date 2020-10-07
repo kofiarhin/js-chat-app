@@ -154,3 +154,26 @@ font-size: 3rem;
 
     color: white;
 }
+
+
+@media(max-width: 640px) {
+
+    #users-wrapper {
+        display: none;
+    }
+#messages-wrapper #form-wrapper form input, #messages-wrapper #form-wrapper form button {
+
+    font-size: 1rem;
+}
+
+
+#messages-wrapper #form-wrapper form button {
+
+    padding: 0.8rem 3rem;
+}
+
+#messages-wrapper #form-wrapper form input {
+    padding: 0.8rem 0rem;
+}
+
+}
