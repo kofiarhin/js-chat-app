@@ -26,13 +26,13 @@ socket.emit("join", { username, room }, (error) => {
     window.location.href = "/"
 })
 
+
+// join
 socket.on("new-user", ({ username, users }) => {
 
-    const element = document.createElement("p")
-    element.innerText = `${username} just joined!`;
-    element.classList.add("message")
-
-    $messages.insertAdjacentElement("beforeend", element)
+    let textWrapper = document.createElement('div');
+    textWrapper.innerHTML  = `<p class="join-message"> ${username} just joined!</p>`;
+    $messages.insertAdjacentElement("beforeend", textWrapper)
 })
 
 
@@ -61,6 +61,7 @@ socket.on("roomData", data => {
 socket.on("user-left", username => {
 
     const textWrapper = document.createElement("div");
+    textWrapper.classList.add("text-wrapper")
     const element = document.createElement("p")
     element.classList.add("message")
     element.innerText = `${username} just left`;
@@ -88,13 +89,15 @@ socket.on("error", data => {
 // separate actual message from welcom message
 socket.on("sendMessage", ({ username, message }) => {
 
-    const element = document.createElement("p");
-    element.classList.add("message")
+     let textWrapper = document.createElement("div");
+    textWrapper.classList.add("text-wrapper")
 
     // work on the styling later
-    element.innerHTML = `${username}: ${message}`;
+    // element.innerHTML = `${username}: ${message}`;
+    textWrapper.innerHTML = `<p class="message"> ${username}:  ${message} </p>`
+    
 
-    $messages.insertAdjacentElement("beforeend", element)
+    $messages.insertAdjacentElement("beforeend", textWrapper)
 
 
 })

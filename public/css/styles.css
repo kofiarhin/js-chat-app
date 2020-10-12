@@ -153,6 +153,17 @@ font-size: 3rem;
 
 
 /* typography */
+
+.join-message {
+    display: inline-block;
+    background: green;
+    color:white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
 .message  {
     font-size: 1.4rem;
     margin-bottom: 1rem;
@@ -196,6 +207,12 @@ font-size: 3rem;
 #users-wrapper.active {
 
     transform: translateX(0px)
+}
+
+.text-wrapper {
+
+    display: block;
+
 }
 
 .message {
