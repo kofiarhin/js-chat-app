@@ -1,0 +1,248 @@
+/* use normalize to reset browser later */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* general styling */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul li {
+  color: white;
+  margin-bottom: .8rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.title, .room-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.room-title {
+  font-size: 1.4rem;
+}
+
+/* media query */
+@media (max-width: 640px) {
+  #users-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    -webkit-transform: translateX(-400px);
+            transform: translateX(-400px);
+    width: 200px;
+  }
+  #users-wrapper.active {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  .text-wrapper {
+    display: block;
+  }
+  .message {
+    font-size: 1rem;
+  }
+  #messages-wrapper #form-wrapper form input {
+    font-size: 1rem;
+  }
+  #messages-wrapper #form-wrapper form button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+  #messages-wrapper #form-wrapper form input {
+    padding: 0.8rem 0rem;
+    text-indent: 20px;
+  }
+  .show-users {
+    display: block;
+    top: 10px;
+    right: 0pc;
+  }
+}
+
+#join .title {
+  font-size: 3rem;
+}
+
+#join {
+  margin-top: 100px;
+}
+
+#join .form-wrapper {
+  width: 540px;
+  max-width: 90%;
+  margin: 0px auto;
+}
+
+#join .form-wrapper label {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+}
+
+#join .form-wrapper input,
+#join .form-wrapper select {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  text-indent: 20px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 1.3rem;
+}
+
+#join .form-wrapper button {
+  display: block;
+  width: 100%;
+  padding: 1rem 0rem;
+  background: #6730ec;
+  color: white;
+}
+
+/*  chat page */
+#chat-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+#users-wrapper {
+  width: 300px;
+  background: #373a40;
+  padding: 3rem 1rem;
+  overflow-y: scroll;
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: 3px;
+}
+
+#messages-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#messages-wrapper #messages {
+  background: #686d76;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 5rem 2rem 0rem 2rem;
+  overflow-y: scroll;
+}
+
+#messages-wrapper #form-wrapper form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#messages-wrapper #form-wrapper form input {
+  padding: 0.8rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 1.4rem;
+}
+
+#messages-wrapper #form-wrapper form .send {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* typography */
+.user-left {
+  display: inline-block;
+  background: red;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.join-message {
+  display: inline-block;
+  background: green;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.message {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  background: white;
+  padding: 0.8rem;
+  border-radius: 8px 8px 8px 0px;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.user {
+  color: white;
+}
+
+.show-users {
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+  color: white;
+  font-size: 1.8rem;
+}
+/*# sourceMappingURL=styles.css.map */

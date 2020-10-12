@@ -1,0 +1,44 @@
+
+#join .title {
+
+font-size: 3rem;
+}
+
+
+#join {
+
+    margin-top: 100px;
+}
+
+#join .form-wrapper {
+    width: 540px;
+    max-width: 90%;
+    margin: 0px auto;
+
+}
+
+#join .form-wrapper label {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+#join .form-wrapper input,
+#join .form-wrapper select {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    text-indent: 20px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(black, 0.8); 
+    font-size: 1.3rem;
+    
+}
+
+#join .form-wrapper button {
+    display: block;
+    width: 100%;
+    padding: 1rem 0rem;
+    background: #6730ec;
+    color: white;
+}
