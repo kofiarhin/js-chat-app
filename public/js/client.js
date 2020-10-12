@@ -58,16 +58,12 @@ socket.on("roomData", data => {
 
 })
 
+
 socket.on("user-left", username => {
 
-    const textWrapper = document.createElement("div");
-    textWrapper.classList.add("text-wrapper")
-    const element = document.createElement("p")
-    element.classList.add("message")
-    element.innerText = `${username} just left`;
-    textWrapper.innerHTML = element;
+    let textWrapper = document.createElement("div");
+    textWrapper.innerHTML = `<p class="user-left"> ${username} just left </p>`
     $messages.insertAdjacentElement("beforeend", textWrapper);
-
 
 })
 

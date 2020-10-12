@@ -154,6 +154,17 @@ font-size: 3rem;
 
 /* typography */
 
+.user-left {
+    display: inline-block;
+    background:red;
+    color:white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
 .join-message {
     display: inline-block;
     background: green;
