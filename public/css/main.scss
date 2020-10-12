@@ -144,11 +144,12 @@ font-size: 3rem;
     font-size: 1.4rem;
 }
 
-#messages-wrapper #form-wrapper form button {
-    padding: 0.8rem 3rem;
-    background: #6730ec;
-    color: white;
-    font-size: 1.2rem;
+#messages-wrapper #form-wrapper form .send {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
 }
 
 
