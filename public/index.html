@@ -21,8 +21,17 @@
         <div class="form-wrapper">
 
             <form action="chat.html">
-                <input type="text" name="username" placeholder="Enter username">
-                <input type="text" name="room" placeholder="Enter room name">
+                <label for="username">Enter Username</label>
+                <input type="text" name="username" placeholder="johndoe" required>
+                <label for="room">Select Room</label>
+
+                <select name="room" id="">
+                    <option value="public">Public</option>
+                    <option value="sports">Sports</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="programmers">Programmers</option>
+                </select>
+                <!-- <input type="text" name="room" placeholder="Enter room name"> -->
                 <button>Join</button>
             </form>
         </div>

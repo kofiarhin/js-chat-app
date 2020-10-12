@@ -72,10 +72,14 @@ font-size: 3rem;
 
 }
 
+#join .form-wrapper label {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
 
-
-#join .form-wrapper input {
-    
+#join .form-wrapper input,
+#join .form-wrapper select {
     display: block;
     width: 100%;
     padding: 0.8rem;
@@ -94,9 +98,10 @@ font-size: 3rem;
     color: white;
 }
 
+
+/*  chat page */
 #chat-wrapper {
 
-    background: pink;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -115,7 +120,6 @@ font-size: 3rem;
 
 #messages-wrapper {
 
-    background: orange;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -124,8 +128,9 @@ font-size: 3rem;
 #messages-wrapper #messages {
     background: #7984ee;
     flex: 1;
-    padding:  2rem 3rem;
-    overflow-y: scroll
+    padding:  5rem 2rem 0rem 2rem;
+    overflow-y: scroll;
+    
 }
 
 #messages-wrapper #form-wrapper form  {
@@ -146,25 +151,28 @@ font-size: 3rem;
     font-size: 1.2rem;
 }
 
+
+/* typography */
 .message  {
-    color: white;
     font-size: 1.4rem;
     margin-bottom: 1rem;
+    background: white;
+    padding: 0.8rem;
+    border-radius: 8px 8px 8px 0px;
+    display: inline-block;
+    line-height: 1.2;
 }
-
 
 .user {
 
     color: white;
 }
 
-
-
 .show-users {
     padding: 1rem 2rem;
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 20px;
     cursor: pointer;
     display: none;
     color: white;
@@ -172,6 +180,7 @@ font-size: 3rem;
 }
 
 
+/* media query */
 
 @media(max-width: 640px) {
 
@@ -189,9 +198,11 @@ font-size: 3rem;
     transform: translateX(0px)
 }
 
+.message {
+    font-size: 1rem;
+}
 
-
-#messages-wrapper #form-wrapper form input, #messages-wrapper #form-wrapper form button {
+#messages-wrapper #form-wrapper form input {
 
     font-size: 1rem;
 }
@@ -199,7 +210,8 @@ font-size: 3rem;
 
 #messages-wrapper #form-wrapper form button {
 
-    padding: 0.8rem 3rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
 }
 
 #messages-wrapper #form-wrapper form input {
@@ -210,6 +222,8 @@ font-size: 3rem;
 .show-users {
 
     display: block;
+    top: 10px;
+    right: 0pc
 }
 
 }
