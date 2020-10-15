@@ -140,7 +140,7 @@ ul li {
 
 #users-wrapper {
   width: 300px;
-  background: #373a40;
+  background: #333146;
   padding: 3rem 1rem;
   overflow-y: scroll;
   -webkit-transition: all ease-in-out 300ms;
@@ -163,7 +163,7 @@ ul li {
 }
 
 #messages-wrapper #messages {
-  background: #686d76;
+  background: #36485e;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -185,20 +185,19 @@ ul li {
   font-size: 1.4rem;
 }
 
-#messages-wrapper #form-wrapper form .send {
+#messages-wrapper #form-wrapper form button {
+  background: #333146;
+  color: white;
   width: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  font-size: 2rem;
 }
 
 /* typography */
+.room-title {
+  color: white;
+  font-size: 2rem;
+}
+
 .user-left {
   display: inline-block;
   background: red;

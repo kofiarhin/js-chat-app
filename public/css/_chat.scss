@@ -1,4 +1,4 @@
-/*  chat page */
+/*  chat page */    
 #chat-wrapper {
 
     width: 100vw;
@@ -23,6 +23,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    
 }
 
 #messages-wrapper #messages {
@@ -44,16 +45,20 @@
     font-size: 1.4rem;
 }
 
-#messages-wrapper #form-wrapper form .send {
+#messages-wrapper #form-wrapper form button {
+    background: $main;
+    color: white;
     width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 2rem;
    
 }
 
 
 /* typography */
+.room-title {
+    color: white;
+    font-size: 2rem;
+}
 
 .user-left {
     display: inline-block;
